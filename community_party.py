@@ -4,7 +4,7 @@ Community Party
 
 You are hosting a party, and people keep arriving in pairs. You want to know how everyone knows
 one another, so people with no common communities can get to know one another. The pairs are 
-defined as couples with names, ie ("Matt", "Sabrina"). Can you be the party matcher?
+defined as couples with names, ie ("Amanda", "Ben"). Can you be the party matcher?
 """
 
 # Store all the communities in a single list. Each community is its own list inside
@@ -75,19 +75,19 @@ def search(pair):
 
 if __name__ == "__main__":
 	# A bunch of people come to the party
-	add(("A", "B"))
-	add(("B", "C"))
-	add(("A", "D"))
-	add(("B", "C"))
-	add(("X", "Y"))
-	add(("G", "F"))
-	add(("A", "F"))
+	add(("Amanda", "Ben"))
+	add(("Ben", "Charlie"))
+	add(("Amanda", "Demi"))
+	add(("Ben", "Charlie"))
+	add(("Xavier", "Yena"))
+	add(("Grace", "Felix"))
+	add(("Amanda", "Felix"))
 
 	# Find out if someone is not included
-	assert search(("A", "B")) == True
-	assert search(("A", "F")) == True
-	assert search(("A", "G")) == True
-	assert search(("X", "F")) == False
+	assert search(("Amanda", "Ben")) == True
+	assert search(("Amanda", "Felix")) == True
+	assert search(("Amanda", "Grace")) == True
+	assert search(("Xavier", "Felix")) == False
 
 	# Found out how many communities are at the party
 	assert len(communities) == 2  # O(N) where N is the number of communities
